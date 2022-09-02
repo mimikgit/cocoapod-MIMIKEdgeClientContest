@@ -1,0 +1,4 @@
+framework module MIMIKEdgeClientContest {
+  header "MIMIKEdgeClientContest-Swift.h"
+  requires objc
+}

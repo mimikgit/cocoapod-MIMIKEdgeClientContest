@@ -1,0 +1,117 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MIMIKEdgeClientContest
+import Alamofire
+import Foundation
+import MIMIKEdgeClientCore
+import Swift
+import SwiftyJSON
+import _Concurrency
+@objc @_inheritsConvenienceInitializers final public class MIMIKEdgeClientContest : ObjectiveC.NSObject {
+  public static let kSwaggerFileVersion: Swift.String
+  public static let kServiceType: MIMIKEdgeClientCore.MIMIKService.ServiceType
+  public static let kHealthCheckPath: Swift.String
+  final public class func swaggerFileVersion() -> Swift.String
+  final public class func serviceType() -> MIMIKEdgeClientCore.MIMIKService.ServiceType
+  final public class func serviceConfiguration(rootUrl: Foundation.URL, clientId: Swift.String) -> MIMIKEdgeClientCore.MIMIKService
+  final public class func healthCheckPath() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func contests(service: MIMIKEdgeClientCore.MIMIKService) async -> Swift.Result<[MIMIKEdgeClientCore.MIMIKEdgeClient.Contest], Foundation.NSError>
+  #endif
+
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content {
+  public func dictionary() -> [Swift.String : Any]?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public struct Content : Swift.Codable {
+    public var createdAt: Foundation.Date?
+    public var updatedAt: Foundation.Date?
+    public var _self: Swift.String?
+    public var _id: Swift.String?
+    public init(createdAt: Foundation.Date?, updatedAt: Foundation.Date?, _self: Swift.String?, _id: Swift.String?)
+    public enum CodingKeys : Swift.String, Swift.CodingKey {
+      case createdAt
+      case updatedAt
+      case _self
+      case _id
+      public init?(rawValue: Swift.String)
+      public init?(stringValue: Swift.String)
+      public init?(intValue: Swift.Int)
+      public typealias RawValue = Swift.String
+      public var intValue: Swift.Int? {
+        get
+      }
+      public var rawValue: Swift.String {
+        get
+      }
+      public var stringValue: Swift.String {
+        get
+      }
+    }
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public struct Contest : Swift.Codable {
+    public var createdAt: Foundation.Date?
+    public var updatedAt: Foundation.Date?
+    public var _self: Swift.String?
+    public var _id: Swift.String?
+    public init(createdAt: Foundation.Date?, updatedAt: Foundation.Date?, _self: Swift.String?, _id: Swift.String?)
+    public enum CodingKeys : Swift.String, Swift.CodingKey {
+      case createdAt
+      case updatedAt
+      case _self
+      case _id
+      public init?(rawValue: Swift.String)
+      public init?(stringValue: Swift.String)
+      public init?(intValue: Swift.Int)
+      public typealias RawValue = Swift.String
+      public var intValue: Swift.Int? {
+        get
+      }
+      public var rawValue: Swift.String {
+        get
+      }
+      public var stringValue: Swift.String {
+        get
+      }
+    }
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest {
+  public func dictionary() -> [Swift.String : Any]?
+}
+@objc @_inheritsConvenienceInitializers final public class MIMIKEdgeClientContent : ObjectiveC.NSObject {
+  public static let kSwaggerFileVersion: Swift.String
+  public static let kServiceType: MIMIKEdgeClientCore.MIMIKService.ServiceType
+  public static let kHealthCheckPath: Swift.String
+  final public class func swaggerFileVersion() -> Swift.String
+  final public class func serviceType() -> MIMIKEdgeClientCore.MIMIKService.ServiceType
+  final public class func serviceConfiguration(rootUrl: Foundation.URL, clientId: Swift.String) -> MIMIKEdgeClientCore.MIMIKService
+  final public class func healthCheckPath() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func content(service: MIMIKEdgeClientCore.MIMIKService) async -> Swift.Result<[MIMIKEdgeClientCore.MIMIKEdgeClient.Content], Foundation.NSError>
+  #endif
+
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.CodingKeys : Swift.Equatable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.CodingKeys : Swift.Hashable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.CodingKeys : Swift.RawRepresentable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.CodingKeys : Swift.Equatable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.CodingKeys : Swift.Hashable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.CodingKeys : Swift.RawRepresentable {}
