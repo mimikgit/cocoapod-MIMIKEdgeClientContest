@@ -1,11 +1,13 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios15.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MIMIKEdgeClientContest
+import AVFoundation
 import Alamofire
 import Foundation
 import MIMIKEdgeClientCore
 import Swift
 import SwiftyJSON
+import UIKit
 import _Concurrency
 @objc @_inheritsConvenienceInitializers final public class MIMIKEdgeClientContest : ObjectiveC.NSObject {
   public static let kSwaggerFileVersion: Swift.String
@@ -103,9 +105,25 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest {
   @objc deinit
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public typealias ProgressHandler = (_ progress: Foundation.Progress) -> Swift.Void
   
   #if compiler(>=5.3) && $AsyncAwait
-  final public func content(service: MIMIKEdgeClientCore.MIMIKService) async -> Swift.Result<[MIMIKEdgeClientCore.MIMIKEdgeClient.Content], Foundation.NSError>
+  final public func exportVideo(session: AVFoundation.AVAssetExportSession, outputURL: Foundation.URL, outFileType: AVFoundation.AVFileType) async -> Swift.Result<Swift.Bool, Swift.Error>
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping MIMIKEdgeClientCore.MIMIKEdgeClient.ProgressHandler) async -> Swift.Result<Swift.Bool, Swift.Error>
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping MIMIKEdgeClientCore.MIMIKEdgeClient.ProgressHandler) async -> Swift.Result<Swift.Bool, Swift.Error>
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, Swift.Error>
   #endif
 
 }

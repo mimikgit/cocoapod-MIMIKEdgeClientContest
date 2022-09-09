@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		o0CHgF3XSeDjOI+5cGOuTP+Ihfk=
+		YQXtbFvCvxwHwCkPdUnAZEOmvSY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,49 +15,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OwMFm9BHc606bzdQhPQV49Q4ogKaolj4E5d6lm6sXnY=
+			OW+/ZKytfkmlThCqZtTtlgdpOEA4bzdt/p8GVwKIt50=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3Wq7lgouVc6VNN3TeuL+YVmliVA9ge7cSIsR1TxAo7k=
+			Nx7ZL6QktuyxiO6Pdeb/Q1PyewqyG0WyevJ7Q1VJyi8=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jPdUthJaEmTSvvmyZ8AIP5Uww+pPUOc3jbgz/6f4x3g=
+			0s35wZxjNsbdOaptcGJq0GaBdOtY4wMlU8dRg43h/0Y=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DWjiF5PVg2OIRtmEMCZfaOurUiNeO/BMyYmfN/NHwnw=
+			iVQ4jSwD1CYfsmuFtvVQdh1+ynN9U/WW9RpxuSvUvOE=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Eoyr7Xo/SNAsR/N8lEA3WrPK/9d8P8OxveJiytKexjI=
+			2zy0L5ugj7kTzRbnC2A1xdoAkQbZkZNCbTg8CV0Rnho=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lmGXld/Z2v9bwcEeg4qhn3vWgENwu99KtSYDS/P2M9I=
+			JR+xKCtEEp/DCYDrR3DOxhL7p3IlssrLgsyjxzRZfY0=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c+2ZOhd78aIR6x/eGM9RAnQXGvp2dMI21wvC7E+i2nc=
+			tSK6/1aXE11gxwlXu2YAxGs18jptDXWIb/7m9B+0YIo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -71,7 +71,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T9iHwQ9iH6yThFm3Dzoef1M2rY96DRq8oCPhffwO4lA=
+			xsPbLh59hEQnjfTVVEG4mE3gZpA44klBor0FV03s3KY=
 			</data>
 		</dict>
 	</dict>
