@@ -5,15 +5,44 @@ MIMIKEdgeClientContest service library can help you interact with the following 
  * `Contest`
  * `Content`
 
-using these APIs:
+using the following APIs:
 
 ### Contest
 
- * `tbd`
+* contests
+* contest
+* leaderboards
+* contestants
+* createContestant
+* contestant
+* updateContestant
+* rounds
+* round
+* judges
+* judge
+* charities
+* charity
+* createModerationRequest
+* createVote
+* votePackages
+* votePackage
 
 ### Content
  
- * `tbd`
+* createContent
+* content
+* deleteContent
+* contentUploadUrl
+* contentVariations
+* validateContentVariation
+* contentTypes
+
+### Video Export with Transcode and Upload
+
+* exportVideo
+* uploadContent
+* downloadContent
+* downloadImageContent
 
 Please see the in-code documentation in Xcode for more details.
 
@@ -76,6 +105,7 @@ Direct links:
  * [MIMIKEdgeClientCore](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientCore)
  * [MIMIKEdgeClientEngine](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientEngine)
  * [MIMIKEdgeClientUser](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientUser)
+ * [MIMIKEdgeClientContest](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientContest)
  * [MIMIKEdgeClientAssessment](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientAssessment)
  * [MIMIKEdgeClientNotification](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientNotification)
  * [MIMIKEdgeClientTracker](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientTracker)

@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Apw0g6KLbJW697Cb1wmCsGREIKQ=
+		XdCz1rUH8R7Jrmw0LIrA3CriAOo=
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		kBDguDImFCqKy3BN8nU8wJnzqXc=
+		k4qqaxOfJ4PN9caK83cKmIVvL+Y=
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		eXPRmc64kt48EDTgXtGh/ILQ78s=
+		DOzV2e5dIdcYOE0FOnbquqOCJTM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -68,7 +68,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rwmx4U45XPOnCgC70KTsrGJeAEaq9QbhWC8xzaxg9l4=
+			t/uk2bWIx0GEa63Gd8z7RtXlce7sSuODthTI95Q5tls=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3i5ryrKtg7N3RuNp6GaRpkeXCODQeolGHkIXekNDH0U=
+			/tMJ4zqEc67RVZaX+elSEgHyZFe/jVyUyOZd+KI3+OQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
