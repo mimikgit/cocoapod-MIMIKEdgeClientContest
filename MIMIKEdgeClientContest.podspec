@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.name         = "MIMIKEdgeClientContest"
   s.version      = "13.6.0"
-  s.summary      = "mimik contest library"
+  s.summary      = "mimik social library"
 
   s.description  = <<-DESC
  MIMIKEdgeClientUser service library can help you interact with the following mimik services: Contest and Contents.
