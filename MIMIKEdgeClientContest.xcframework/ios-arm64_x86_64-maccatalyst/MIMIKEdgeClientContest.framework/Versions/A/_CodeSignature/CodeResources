@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		JAQEIjfFg1ImzTRXL6/CSMKbAec=
+		4dlLk0lPsFseFsi2wBRti6L9qaY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,49 +15,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J800WW6opzyA2M6+YoPP9Y5U4BkPLZEx4XFnTf05SWg=
+			Rb2kC8ZTZ4HSSQzqUvMdT4kgLmW3Kz86WuIHvXYzD9w=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/kQnWQ1JODzU/PR4O0XJ0vWPVVtbtNXDz1g+mWIlIjE=
+			YpD1lY2WbCX9bzje/ybGf17U5phEme4rgbMfmvtcfqE=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9UdQWpiZwABNhKiG+JwK73PvyTJB8S4QUGIuwA9Hg08=
+			rVsAzUa00vGX5Yf77yV4O3U56xF1qRr9/N19Ogw9Q5Y=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tyKOQfhi6MJpoaZzrDAdvBgJ84YMTxps+/c2cktl+84=
+			fG3IpwdMepEuWXdEzQQwUqnQiYGS3O79l6U/TAAdS/M=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b3bIGBkW3lR+ahC9C3vLwRdYSbHf5wGXSeu+0IvSaHg=
+			dL3sbCzSCD8isc3TJygAztsYIpduy2wbm9uxjx49BCM=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vSrBZT9lpLZiXHf8247+SDX4zOBl5X5EpDwg84PjWMM=
+			ldobRFKNtgePB3DqiSWLCBOJETusKbkFXuVXC/KH48g=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ym3npuY82dhY3ssBq/t0khb+96XgxpsEwAouWK1J/TM=
+			8qMrzNT8oHfb8Itlts+wDyUBLgAIcm0W4JC8paC3zX8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -71,7 +71,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vTuMW480lKs74Gl7D0dx+GwAbAHX1jaIcyeOddPF1Q4=
+			WHg808tayGLK34Lhnzh5lYIBAjkVF+jqRQwKbYUtYh8=
 			</data>
 		</dict>
 	</dict>

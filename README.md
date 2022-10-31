@@ -3,7 +3,6 @@
 MIMIKEdgeClientContest service library can help you interact with the following mimik services:
 
  * `Contest`
- * `Content`
 
 using the following APIs:
 
@@ -15,6 +14,8 @@ using the following APIs:
 * contestants
 * createContestant
 * contestant
+* contestantGroups
+* contestantGroup
 * updateContestant
 * rounds
 * round
@@ -23,26 +24,11 @@ using the following APIs:
 * charities
 * charity
 * createModerationRequest
+* votes
 * createVote
+* voteSummaries
 * votePackages
 * votePackage
-
-### Content
- 
-* createContent
-* content
-* deleteContent
-* contentUploadUrl
-* contentVariations
-* validateContentVariation
-* contentTypes
-
-### Video Export with Transcode and Upload
-
-* exportVideo
-* uploadContent
-* downloadContent
-* downloadImageContent
 
 Please see the in-code documentation in Xcode for more details.
 
@@ -72,8 +58,8 @@ use_frameworks!
 inhibit_all_warnings!
 
 def mimik
-  pod 'MIMIKEdgeClientCore', '13.6.0'
-  pod 'MIMIKEdgeClientContest', '13.6.0'
+  pod 'MIMIKEdgeClientCore', '13.6.1'
+  pod 'MIMIKEdgeClientContest', '13.6.1'
 end
 
 target '{target}' do
@@ -106,6 +92,7 @@ Direct links:
  * [MIMIKEdgeClientEngine](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientEngine)
  * [MIMIKEdgeClientUser](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientUser)
  * [MIMIKEdgeClientContest](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientContest)
+ * [MIMIKEdgeClientContent](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientContent)
  * [MIMIKEdgeClientAssessment](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientAssessment)
  * [MIMIKEdgeClientNotification](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientNotification)
  * [MIMIKEdgeClientTracker](https://github.com/mimikgit/cocoapod-MIMIKEdgeClientTracker)

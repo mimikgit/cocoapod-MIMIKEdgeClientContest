@@ -259,27 +259,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContent")
-@interface MIMIKEdgeClientContent : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContest")
 @interface MIMIKEdgeClientContest : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -555,27 +534,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContent")
-@interface MIMIKEdgeClientContent : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContest")
