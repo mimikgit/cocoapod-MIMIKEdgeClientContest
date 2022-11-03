@@ -134,11 +134,6 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   @objc deinit
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public typealias PagingHandler = (_ paging: MIMIKEdgeClientCore.MIMIKEdgeClient.PagingInfo?) -> Swift.Void
-  public struct PagingInfo {
-    public let count: Swift.Int
-    public let startAfter: Swift.String
-  }
   
   #if compiler(>=5.3) && $AsyncAwait
   final public func contests(service: MIMIKEdgeClientCore.MIMIKService, judgeId: Swift.String?, charityId: Swift.String?, pageSize: Swift.Int?, startAfter: Swift.String?, pagingHandler: MIMIKEdgeClientCore.MIMIKEdgeClient.PagingHandler?) async -> Swift.Result<[MIMIKEdgeClientCore.MIMIKEdgeClient.Contest], Foundation.NSError>
@@ -844,10 +839,6 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }
-}
-@objc @_inheritsConvenienceInitializers public class MIMIKSwaggerMock : ObjectiveC.NSObject {
-  @objc override dynamic public init()
-  @objc deinit
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct ContestantModerationVerdict : Swift.Codable {

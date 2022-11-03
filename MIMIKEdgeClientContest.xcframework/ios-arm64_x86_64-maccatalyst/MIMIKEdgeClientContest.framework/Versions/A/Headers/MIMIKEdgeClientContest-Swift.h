@@ -264,12 +264,6 @@ SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContest")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC22MIMIKEdgeClientContest16MIMIKSwaggerMock")
-@interface MIMIKSwaggerMock : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -538,12 +532,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContest")
 @interface MIMIKEdgeClientContest : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC22MIMIKEdgeClientContest16MIMIKSwaggerMock")
-@interface MIMIKSwaggerMock : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

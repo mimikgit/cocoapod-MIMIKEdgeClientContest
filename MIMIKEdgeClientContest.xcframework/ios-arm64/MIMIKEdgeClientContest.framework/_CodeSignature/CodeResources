@@ -6,23 +6,23 @@
 	<dict>
 		<key>Headers/MIMIKEdgeClientContest-Swift.h</key>
 		<data>
-		O8LGqBgJxiA4caDMHCxJStQZ6zE=
+		ZQBHbevgVHMjZLhR7WdTL3N45dM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hldYEmranSPe1+y4vowdyFHxIo4=
+		Om0AC/cAwArliir7rljGT7MY6aE=
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		NDAOrViuODtZbsad8REC8L72Ej8=
+		+YM4tub3YwzBRx6Il66XXZgtbt8=
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		rSRWcLQevGwAFMfV5R2nna3qD60=
+		K52CGZIHnsVhPLndQhpu6UiRgvo=
 		</data>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		SM3IqoVScUza5QT/u/DivCRxJXU=
+		wTnWfjuSEujZm3iSWF3hg54VBSU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,28 +35,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eWN6EX5MBDesW69BIJkRPgrln8OqGh/h7+qj0UcGF24=
+			urCUpBZ5ny27NljFPdov5L0mhrXkigZQn4vpxohHcWs=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jsZhxTc9UGnj/9q4cvOAmOeyP+M1vkPMUQn8bbl7sHQ=
+			PFOYx6orqihWWEMkesq/85zVTU8IH5DIDRYslbMLz1I=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fFfmNzQqQei80NWsNFbpnc1mQ2LlkNc/9k9BVQcoaB4=
+			09ZvYH38tCruvrVOJ30Z9yaTEXh1bGp4x3EDJ/dEng0=
 			</data>
 		</dict>
 		<key>Modules/MIMIKEdgeClientContest.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rhCGxJSXuNkZxXvxxHv+fflCyrlc1R7rJuIgOJQR6D0=
+			1gMquSWpW/JBnjUDizkpRViO+dQlz3gkY4y9Noe66B4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
