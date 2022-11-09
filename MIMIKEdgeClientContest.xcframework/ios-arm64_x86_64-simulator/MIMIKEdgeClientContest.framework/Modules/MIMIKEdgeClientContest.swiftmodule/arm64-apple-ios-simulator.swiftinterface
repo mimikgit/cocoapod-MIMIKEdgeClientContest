@@ -927,18 +927,63 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest {
   public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewContestant {
   public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.UpdateContestant {
   public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequest {
   public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewVote {
   public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.LeaderboardEntry {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contestant {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantGroup {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Judge {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Charity {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Vote {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.VotePackage {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.VoteSummary {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ModerationResponse {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct ContentType : Swift.Codable {
