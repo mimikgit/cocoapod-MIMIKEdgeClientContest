@@ -58,8 +58,8 @@ use_frameworks!
 inhibit_all_warnings!
 
 def mimik
-  pod 'MIMIKEdgeClientCore', '13.6.1'
-  pod 'MIMIKEdgeClientContest', '13.6.1'
+  pod 'MIMIKEdgeClientCore'
+  pod 'MIMIKEdgeClientContest'
 end
 
 target '{target}' do

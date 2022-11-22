@@ -268,9 +268,10 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var prizes: [MIMIKEdgeClientCore.MIMIKEdgeClient.Prize]?
     public var status: MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.Status?
     public var _id: Foundation.UUID
+    public var scheduledEvents: [MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent]?
     public var createdAt: Foundation.Date
     public var updatedAt: Foundation.Date
-    public init(name: Swift.String, _description: Swift.String, contentTypes: [MIMIKEdgeClientCore.MIMIKEdgeClient.ContentType], clientName: Swift.String, judges: [Foundation.UUID], maxJudgeVotes: Swift.Double, startDate: Foundation.Date, endDate: Foundation.Date, banners: [MIMIKEdgeClientCore.MIMIKEdgeClient.Banner]?, logo: Swift.String?, votePackages: [Foundation.UUID]?, leaderboardInterval: Swift.Double?, charityId: Foundation.UUID?, prizes: [MIMIKEdgeClientCore.MIMIKEdgeClient.Prize]?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.Status?, _id: Foundation.UUID, createdAt: Foundation.Date, updatedAt: Foundation.Date)
+    public init(name: Swift.String, _description: Swift.String, contentTypes: [MIMIKEdgeClientCore.MIMIKEdgeClient.ContentType], clientName: Swift.String, judges: [Foundation.UUID], maxJudgeVotes: Swift.Double, startDate: Foundation.Date, endDate: Foundation.Date, banners: [MIMIKEdgeClientCore.MIMIKEdgeClient.Banner]?, logo: Swift.String?, votePackages: [Foundation.UUID]?, leaderboardInterval: Swift.Double?, charityId: Foundation.UUID?, prizes: [MIMIKEdgeClientCore.MIMIKEdgeClient.Prize]?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.Status?, _id: Foundation.UUID, scheduledEvents: [MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent]?, createdAt: Foundation.Date, updatedAt: Foundation.Date)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case name
       case _description
@@ -288,6 +289,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
       case prizes
       case status
       case _id
+      case scheduledEvents
       case createdAt
       case updatedAt
       public init?(rawValue: Swift.String)
@@ -323,8 +325,38 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct WinnerCriteria : Swift.Codable {
     public var minVotes: Swift.Double?
-    public var totalWinners: Swift.Double?
-    public init(minVotes: Swift.Double?, totalWinners: Swift.Double?)
+    public var totalWinners: Swift.Double
+    public init(minVotes: Swift.Double?, totalWinners: Swift.Double)
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public struct ScheduledEvent : Swift.Codable {
+    public var _id: Foundation.UUID
+    public var type: Swift.String
+    public var createdAt: Foundation.Date?
+    public var updatedAt: Foundation.Date?
+    public init(_id: Foundation.UUID, type: Swift.String, createdAt: Foundation.Date?, updatedAt: Foundation.Date?)
+    public enum CodingKeys : Swift.String, Swift.CodingKey {
+      case _id
+      case type
+      case createdAt
+      case updatedAt
+      public init?(rawValue: Swift.String)
+      public init?(stringValue: Swift.String)
+      public init?(intValue: Swift.Int)
+      public typealias RawValue = Swift.String
+      public var intValue: Swift.Int? {
+        get
+      }
+      public var rawValue: Swift.String {
+        get
+      }
+      public var stringValue: Swift.String {
+        get
+      }
+    }
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }
@@ -365,6 +397,15 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct ContestRound : Swift.Codable {
+    public enum LeaderboardType : Swift.String, Swift.Codable {
+      case dedicated
+      case cumulative
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
     public enum Voters : Swift.String, Swift.Codable {
       case viewers
       case judges
@@ -386,7 +427,10 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
       }
     }
     public var title: Swift.String
+    public var _description: Swift.String?
     public var maxContestants: Swift.Double
+    public var leaderboardType: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.LeaderboardType
+    public var winnerCriteria: MIMIKEdgeClientCore.MIMIKEdgeClient.WinnerCriteria
     public var voters: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Voters
     public var contestId: Foundation.UUID
     public var startDate: Foundation.Date
@@ -397,12 +441,16 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var nextRound: Foundation.UUID?
     public var status: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Status?
     public var _id: Foundation.UUID
+    public var scheduledEvents: [MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent]?
     public var createdAt: Foundation.Date
     public var updatedAt: Foundation.Date
-    public init(title: Swift.String, maxContestants: Swift.Double, voters: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Voters, contestId: Foundation.UUID, startDate: Foundation.Date, endDate: Foundation.Date, groupingCriteria: MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria?, votePackages: [Foundation.UUID]?, previousRound: Foundation.UUID?, nextRound: Foundation.UUID?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Status?, _id: Foundation.UUID, createdAt: Foundation.Date, updatedAt: Foundation.Date)
+    public init(title: Swift.String, _description: Swift.String?, maxContestants: Swift.Double, leaderboardType: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.LeaderboardType, winnerCriteria: MIMIKEdgeClientCore.MIMIKEdgeClient.WinnerCriteria, voters: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Voters, contestId: Foundation.UUID, startDate: Foundation.Date, endDate: Foundation.Date, groupingCriteria: MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria?, votePackages: [Foundation.UUID]?, previousRound: Foundation.UUID?, nextRound: Foundation.UUID?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Status?, _id: Foundation.UUID, scheduledEvents: [MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent]?, createdAt: Foundation.Date, updatedAt: Foundation.Date)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case title
+      case _description
       case maxContestants
+      case leaderboardType
+      case winnerCriteria
       case voters
       case contestId
       case startDate
@@ -413,6 +461,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
       case nextRound
       case status
       case _id
+      case scheduledEvents
       case createdAt
       case updatedAt
       public init?(rawValue: Swift.String)
@@ -668,16 +717,27 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public enum VariationsSource : Swift.String, Swift.Codable {
+      case uploads
+      case conversion
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
     public var _id: Foundation.UUID?
     public var type: Swift.String
     public var fileName: Swift.String
     public var uploadMethod: MIMIKEdgeClientCore.MIMIKEdgeClient.Content.UploadMethod
-    public init(_id: Foundation.UUID?, type: Swift.String, fileName: Swift.String, uploadMethod: MIMIKEdgeClientCore.MIMIKEdgeClient.Content.UploadMethod)
+    public var variationsSource: MIMIKEdgeClientCore.MIMIKEdgeClient.Content.VariationsSource
+    public init(_id: Foundation.UUID?, type: Swift.String, fileName: Swift.String, uploadMethod: MIMIKEdgeClientCore.MIMIKEdgeClient.Content.UploadMethod, variationsSource: MIMIKEdgeClientCore.MIMIKEdgeClient.Content.VariationsSource)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case _id
       case type
       case fileName
       case uploadMethod
+      case variationsSource
       public init?(rawValue: Swift.String)
       public init?(stringValue: Swift.String)
       public init?(intValue: Swift.Int)
@@ -701,6 +761,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public enum ModelType : Swift.String, Swift.Codable {
       case image
       case video
+      case youtube
       public init?(rawValue: Swift.String)
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
@@ -718,20 +779,9 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct GroupingCriteria : Swift.Codable {
-    public enum LeaderboardType : Swift.String, Swift.Codable {
-      case dedicated
-      case cumulative
-      public init?(rawValue: Swift.String)
-      public typealias RawValue = Swift.String
-      public var rawValue: Swift.String {
-        get
-      }
-    }
     public var totalGroups: Swift.Double
     public var maxContestants: Swift.Double
-    public var leaderboardType: MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria.LeaderboardType
-    public var winnerCriteria: MIMIKEdgeClientCore.MIMIKEdgeClient.WinnerCriteria
-    public init(totalGroups: Swift.Double, maxContestants: Swift.Double, leaderboardType: MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria.LeaderboardType, winnerCriteria: MIMIKEdgeClientCore.MIMIKEdgeClient.WinnerCriteria)
+    public init(totalGroups: Swift.Double, maxContestants: Swift.Double)
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }
@@ -747,12 +797,14 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct Prize : Swift.Codable {
     public var order: Swift.Double
+    public var title: Swift.String?
     public var _description: Swift.String?
     public var image: Swift.String
     public var value: Swift.String
-    public init(order: Swift.Double, _description: Swift.String?, image: Swift.String, value: Swift.String)
+    public init(order: Swift.Double, title: Swift.String?, _description: Swift.String?, image: Swift.String, value: Swift.String)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case order
+      case title
       case _description
       case image
       case value
@@ -1104,12 +1156,18 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.Status : Swift.RawRepresen
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.CodingKeys : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.CodingKeys : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Contest.CodingKeys : Swift.RawRepresentable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent.CodingKeys : Swift.Equatable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent.CodingKeys : Swift.Hashable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent.CodingKeys : Swift.RawRepresentable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource.ModelType : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource.ModelType : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource.ModelType : Swift.RawRepresentable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource.CodingKeys : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource.CodingKeys : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource.CodingKeys : Swift.RawRepresentable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.LeaderboardType : Swift.Equatable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.LeaderboardType : Swift.Hashable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.LeaderboardType : Swift.RawRepresentable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Voters : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Voters : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound.Voters : Swift.RawRepresentable {}
@@ -1146,15 +1204,15 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.CodingKeys : Swift.RawReprese
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.UploadMethod : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.UploadMethod : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.UploadMethod : Swift.RawRepresentable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.VariationsSource : Swift.Equatable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.VariationsSource : Swift.Hashable {}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.VariationsSource : Swift.RawRepresentable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.CodingKeys : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.CodingKeys : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Content.CodingKeys : Swift.RawRepresentable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Banner.ModelType : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Banner.ModelType : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Banner.ModelType : Swift.RawRepresentable {}
-extension MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria.LeaderboardType : Swift.Equatable {}
-extension MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria.LeaderboardType : Swift.Hashable {}
-extension MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria.LeaderboardType : Swift.RawRepresentable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Prize.CodingKeys : Swift.Equatable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Prize.CodingKeys : Swift.Hashable {}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient.Prize.CodingKeys : Swift.RawRepresentable {}
