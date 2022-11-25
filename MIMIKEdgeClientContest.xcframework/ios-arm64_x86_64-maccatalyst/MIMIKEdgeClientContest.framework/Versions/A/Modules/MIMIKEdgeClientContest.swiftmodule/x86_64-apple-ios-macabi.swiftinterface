@@ -59,12 +59,12 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct NewVote : Swift.Codable {
     public var userId: Swift.String
-    public var contestId: Foundation.UUID
-    public var roundId: Foundation.UUID
-    public var contestantId: Foundation.UUID
+    public var contestId: Swift.String
+    public var roundId: Swift.String
+    public var contestantId: Swift.String
     public var referrer: Swift.String?
     public var anonymous: Swift.Bool?
-    public init(userId: Swift.String, contestId: Foundation.UUID, roundId: Foundation.UUID, contestantId: Foundation.UUID, referrer: Swift.String?, anonymous: Swift.Bool?)
+    public init(userId: Swift.String, contestId: Swift.String, roundId: Swift.String, contestantId: Swift.String, referrer: Swift.String?, anonymous: Swift.Bool?)
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }
@@ -566,9 +566,9 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var phoneNumber: Swift.String?
     public var _description: Swift.String?
     public var socialMediaAccounts: [MIMIKEdgeClientCore.MIMIKEdgeClient.SocialMediaAccount]?
-    public var contestId: Foundation.UUID
+    public var contestId: Swift.String
     public var contents: [MIMIKEdgeClientCore.MIMIKEdgeClient.Content]
-    public init(userId: Swift.String, phoneNumber: Swift.String?, _description: Swift.String?, socialMediaAccounts: [MIMIKEdgeClientCore.MIMIKEdgeClient.SocialMediaAccount]?, contestId: Foundation.UUID, contents: [MIMIKEdgeClientCore.MIMIKEdgeClient.Content])
+    public init(userId: Swift.String, phoneNumber: Swift.String?, _description: Swift.String?, socialMediaAccounts: [MIMIKEdgeClientCore.MIMIKEdgeClient.SocialMediaAccount]?, contestId: Swift.String, contents: [MIMIKEdgeClientCore.MIMIKEdgeClient.Content])
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case userId
       case phoneNumber
