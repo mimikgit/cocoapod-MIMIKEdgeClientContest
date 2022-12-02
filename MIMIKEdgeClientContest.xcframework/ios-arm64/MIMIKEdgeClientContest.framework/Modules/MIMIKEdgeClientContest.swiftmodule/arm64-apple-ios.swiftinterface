@@ -62,9 +62,9 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var contestId: Swift.String
     public var roundId: Swift.String
     public var contestantId: Swift.String
-    public var referrer: Swift.String?
+    public var referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?
     public var anonymous: Swift.Bool?
-    public init(userId: Swift.String, contestId: Swift.String, roundId: Swift.String, contestantId: Swift.String, referrer: Swift.String?, anonymous: Swift.Bool?)
+    public init(userId: Swift.String, contestId: Swift.String, roundId: Swift.String, contestantId: Swift.String, referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?, anonymous: Swift.Bool?)
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }
@@ -664,7 +664,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var contestId: Foundation.UUID
     public var roundId: Foundation.UUID
     public var contestantId: Foundation.UUID
-    public var referrer: Swift.String?
+    public var referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?
     public var anonymous: Swift.Bool?
     public var _id: Foundation.UUID?
     public var type: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.ModelType?
@@ -673,7 +673,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var reason: Swift.String?
     public var createdAt: Foundation.Date?
     public var updatedAt: Foundation.Date?
-    public init(userId: Swift.String, contestId: Foundation.UUID, roundId: Foundation.UUID, contestantId: Foundation.UUID, referrer: Swift.String?, anonymous: Swift.Bool?, _id: Foundation.UUID?, type: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.ModelType?, votes: Swift.Double?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.Status?, reason: Swift.String?, createdAt: Foundation.Date?, updatedAt: Foundation.Date?)
+    public init(userId: Swift.String, contestId: Foundation.UUID, roundId: Foundation.UUID, contestantId: Foundation.UUID, referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?, anonymous: Swift.Bool?, _id: Foundation.UUID?, type: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.ModelType?, votes: Swift.Double?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.Status?, reason: Swift.String?, createdAt: Foundation.Date?, updatedAt: Foundation.Date?)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case userId
       case contestId
@@ -790,6 +790,14 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct ContestantModerationAction : Swift.Codable {
     public var type: Swift.String
     public init(type: Swift.String)
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public struct NewCheckoutSessionReferrer : Swift.Codable {
+    public var userId: Swift.String?
+    public init(userId: Swift.String?)
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }

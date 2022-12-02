@@ -260,6 +260,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
 SWIFT_CLASS("_TtC22MIMIKEdgeClientContest22MIMIKEdgeClientContest")
 @interface MIMIKEdgeClientContest : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -486,6 +487,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="MIMIKEdgeClientContest",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
 
 
 

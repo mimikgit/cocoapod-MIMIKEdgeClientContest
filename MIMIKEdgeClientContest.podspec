@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MIMIKEdgeClientContest"
-  s.version      = "13.6.5"
+  s.version      = "13.6.6"
   s.summary      = "mimik contest library"
 
   s.description  = <<-DESC
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = "MIMIKEdgeClientContest.xcframework"
 
   s.dependency 'MIMIKEdgeClientCore', '~> 13.6.4'
-  s.dependency 'Alamofire', '~> 5.6.3'
+  s.dependency 'Alamofire', '~> 5.6.4'
   s.dependency 'SwiftyJSON', '~> 5.0.1'
 
   s.platform = 'ios', '14.0'
