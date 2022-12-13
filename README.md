@@ -29,6 +29,7 @@ using the following APIs:
 * voteSummaries
 * votePackages
 * votePackage
+* createInAppPurchase
 
 Please see the in-code documentation in Xcode for more details.
 

@@ -396,6 +396,13 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func createInAppPurchase(service: MIMIKEdgeClientCore.MIMIKService, purchase: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase) async -> Swift.Result<MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase, Foundation.NSError>
+  #endif
+
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct ContestRound : Swift.Codable {
     public enum LeaderboardType : Swift.String, Swift.Codable {
       case dedicated
@@ -660,7 +667,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
-    public var userId: Swift.String
+    public var userId: Swift.String?
     public var contestId: Foundation.UUID
     public var roundId: Foundation.UUID
     public var contestantId: Foundation.UUID
@@ -673,7 +680,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var reason: Swift.String?
     public var createdAt: Foundation.Date?
     public var updatedAt: Foundation.Date?
-    public init(userId: Swift.String, contestId: Foundation.UUID, roundId: Foundation.UUID, contestantId: Foundation.UUID, referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?, anonymous: Swift.Bool?, _id: Foundation.UUID?, type: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.ModelType?, votes: Swift.Double?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.Status?, reason: Swift.String?, createdAt: Foundation.Date?, updatedAt: Foundation.Date?)
+    public init(userId: Swift.String?, contestId: Foundation.UUID, roundId: Foundation.UUID, contestantId: Foundation.UUID, referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?, anonymous: Swift.Bool?, _id: Foundation.UUID?, type: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.ModelType?, votes: Swift.Double?, status: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote.Status?, reason: Swift.String?, createdAt: Foundation.Date?, updatedAt: Foundation.Date?)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
       case userId
       case contestId
@@ -845,6 +852,18 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   final public func judge(service: MIMIKEdgeClientCore.MIMIKService, id: Swift.String) async -> Swift.Result<MIMIKEdgeClientCore.MIMIKEdgeClient.Judge, Foundation.NSError>
   #endif
 
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public struct InAppPurchase : Swift.Codable {
+    public var transactionId: Swift.String?
+    public var originalTransactionId: Swift.String?
+    public var bundleId: Swift.String?
+    public var productId: Swift.String?
+    public var quantity: Swift.Double?
+    public init(transactionId: Swift.String?, originalTransactionId: Swift.String?, bundleId: Swift.String?, productId: Swift.String?, quantity: Swift.Double?)
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct NewModerationRequest : Swift.Codable {
@@ -1045,6 +1064,14 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient.ModerationResponse {
   public func dictionary() -> [Swift.String : Any]?
   public func jsonString() -> Swift.String?
 }
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase {
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct ContentType : Swift.Codable {
     public enum AccessType : Swift.String, Swift.Codable {
@@ -1121,9 +1148,20 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
+  public struct NewInAppPurchase : Swift.Codable {
+    public var contestantId: Swift.String
+    public var anonymous: Swift.Bool?
+    public var receipt: Swift.String
+    public var device: Swift.String
+    public init(contestantId: Swift.String, anonymous: Swift.Bool?, receipt: Swift.String, device: Swift.String)
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   
   #if compiler(>=5.3) && $AsyncAwait
-  final public func votes(service: MIMIKEdgeClientCore.MIMIKService, contestId: Swift.String, roundId: Swift.String?, contestantId: Swift.String?, userId: Swift.String?, type: Swift.String?, pageSize: Swift.Int?, startAfter: Swift.String?, pagingHandler: MIMIKEdgeClientCore.MIMIKEdgeClient.PagingHandler?) async -> Swift.Result<[MIMIKEdgeClientCore.MIMIKEdgeClient.Vote], Foundation.NSError>
+  final public func votes(service: MIMIKEdgeClientCore.MIMIKService, contestId: Swift.String, roundId: Swift.String?, contestantId: Swift.String?, userId: Swift.String?, type: Swift.String?, pageSize: Swift.Int, startAfter: Swift.String?, pagingHandler: MIMIKEdgeClientCore.MIMIKEdgeClient.PagingHandler?) async -> Swift.Result<[MIMIKEdgeClientCore.MIMIKEdgeClient.Vote], Foundation.NSError>
   #endif
 
   
