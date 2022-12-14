@@ -8,7 +8,7 @@ import Swift
 import SwiftyJSON
 import _Concurrency
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ContestantGroup : Swift.Codable {
+  public struct ContestantGroup : Swift.Codable, Swift.Hashable {
     public enum LeaderboardType : Swift.String, Swift.Codable {
       case dedicated
       case cumulative
@@ -52,12 +52,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantGroup, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantGroup) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewVote : Swift.Codable {
+  public struct NewVote : Swift.Codable, Swift.Hashable {
     public var userId: Swift.String
     public var contestId: Swift.String
     public var roundId: Swift.String
@@ -65,12 +70,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?
     public var anonymous: Swift.Bool?
     public init(userId: Swift.String, contestId: Swift.String, roundId: Swift.String, contestantId: Swift.String, referrer: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer?, anonymous: Swift.Bool?)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewVote, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewVote) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct VoteSummary : Swift.Codable {
+  public struct VoteSummary : Swift.Codable, Swift.Hashable {
     public enum ModelType : Swift.String, Swift.Codable {
       case free
       case purchased
@@ -111,7 +121,12 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.VoteSummary, b: MIMIKEdgeClientCore.MIMIKEdgeClient.VoteSummary) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
@@ -151,16 +166,21 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewModerationRequestReferences : Swift.Codable {
+  public struct NewModerationRequestReferences : Swift.Codable, Swift.Hashable {
     public var url: Swift.String?
     public var externalId: Swift.String?
     public init(url: Swift.String?, externalId: Swift.String?)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestReferences, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestReferences) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct UpdateContestant : Swift.Codable {
+  public struct UpdateContestant : Swift.Codable, Swift.Hashable {
     public enum Status : Swift.String, Swift.Codable {
       case withdrawn
       public init?(rawValue: Swift.String)
@@ -195,12 +215,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.UpdateContestant, b: MIMIKEdgeClientCore.MIMIKEdgeClient.UpdateContestant) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Judge : Swift.Codable {
+  public struct Judge : Swift.Codable, Swift.Hashable {
     public var name: Swift.String
     public var title: Swift.String
     public var photo: Swift.String
@@ -233,12 +258,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Judge, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Judge) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Contest : Swift.Codable {
+  public struct Contest : Swift.Codable, Swift.Hashable {
     public enum Status : Swift.String, Swift.Codable {
       case unpublished
       case announced
@@ -306,7 +336,12 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Contest, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Contest) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
@@ -323,16 +358,21 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct WinnerCriteria : Swift.Codable {
+  public struct WinnerCriteria : Swift.Codable, Swift.Hashable {
     public var minVotes: Swift.Double?
     public var totalWinners: Swift.Double
     public init(minVotes: Swift.Double?, totalWinners: Swift.Double)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.WinnerCriteria, b: MIMIKEdgeClientCore.MIMIKEdgeClient.WinnerCriteria) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ScheduledEvent : Swift.Codable {
+  public struct ScheduledEvent : Swift.Codable, Swift.Hashable {
     public var _id: Foundation.UUID
     public var type: Swift.String
     public var createdAt: Foundation.Date?
@@ -357,12 +397,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ScheduledEvent) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewModerationRequestResource : Swift.Codable {
+  public struct NewModerationRequestResource : Swift.Codable, Swift.Hashable {
     public enum ModelType : Swift.String, Swift.Codable {
       case contestant
       public init?(rawValue: Swift.String)
@@ -391,7 +436,12 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
@@ -403,7 +453,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ContestRound : Swift.Codable {
+  public struct ContestRound : Swift.Codable, Swift.Hashable {
     public enum LeaderboardType : Swift.String, Swift.Codable {
       case dedicated
       case cumulative
@@ -485,12 +535,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestRound) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Contestant : Swift.Codable {
+  public struct Contestant : Swift.Codable, Swift.Hashable {
     public enum Status : Swift.String, Swift.Codable {
       case pending
       case active
@@ -542,16 +597,26 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Contestant, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Contestant) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct SocialMediaAccount : Swift.Codable {
+  public struct SocialMediaAccount : Swift.Codable, Swift.Hashable {
     public var handle: Swift.String
     public var type: Swift.String
     public init(handle: Swift.String, type: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.SocialMediaAccount, b: MIMIKEdgeClientCore.MIMIKEdgeClient.SocialMediaAccount) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
@@ -568,7 +633,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewContestant : Swift.Codable {
+  public struct NewContestant : Swift.Codable, Swift.Hashable {
     public var userId: Swift.String
     public var phoneNumber: Swift.String?
     public var _description: Swift.String?
@@ -597,12 +662,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewContestant, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewContestant) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct VotePackage : Swift.Codable {
+  public struct VotePackage : Swift.Codable, Swift.Hashable {
     public enum Status : Swift.String, Swift.Codable {
       case active
       case archived
@@ -642,12 +712,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.VotePackage, b: MIMIKEdgeClientCore.MIMIKEdgeClient.VotePackage) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Vote : Swift.Codable {
+  public struct Vote : Swift.Codable, Swift.Hashable {
     public enum ModelType : Swift.String, Swift.Codable {
       case free
       case purchased
@@ -709,12 +784,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Vote) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Content : Swift.Codable {
+  public struct Content : Swift.Codable, Swift.Hashable {
     public enum UploadMethod : Swift.String, Swift.Codable {
       case single
       case multipart
@@ -759,12 +839,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Content, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Content) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Banner : Swift.Codable {
+  public struct Banner : Swift.Codable, Swift.Hashable {
     public enum ModelType : Swift.String, Swift.Codable {
       case image
       case video
@@ -780,37 +865,57 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var resolution: Swift.String
     public var url: Swift.String
     public init(type: MIMIKEdgeClientCore.MIMIKEdgeClient.Banner.ModelType, title: Swift.String?, resolution: Swift.String, url: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Banner, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Banner) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct GroupingCriteria : Swift.Codable {
+  public struct GroupingCriteria : Swift.Codable, Swift.Hashable {
     public var totalGroups: Swift.Double
     public var maxContestants: Swift.Double
     public init(totalGroups: Swift.Double, maxContestants: Swift.Double)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria, b: MIMIKEdgeClientCore.MIMIKEdgeClient.GroupingCriteria) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ContestantModerationAction : Swift.Codable {
+  public struct ContestantModerationAction : Swift.Codable, Swift.Hashable {
     public var type: Swift.String
     public init(type: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationAction, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationAction) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewCheckoutSessionReferrer : Swift.Codable {
+  public struct NewCheckoutSessionReferrer : Swift.Codable, Swift.Hashable {
     public var userId: Swift.String?
     public init(userId: Swift.String?)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewCheckoutSessionReferrer) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Prize : Swift.Codable {
+  public struct Prize : Swift.Codable, Swift.Hashable {
     public var order: Swift.Double
     public var title: Swift.String?
     public var _description: Swift.String?
@@ -837,7 +942,12 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Prize, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Prize) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
@@ -854,19 +964,24 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct InAppPurchase : Swift.Codable {
+  public struct InAppPurchase : Swift.Codable, Swift.Hashable {
     public var transactionId: Swift.String?
     public var originalTransactionId: Swift.String?
     public var bundleId: Swift.String?
     public var productId: Swift.String?
     public var quantity: Swift.Double?
     public init(transactionId: Swift.String?, originalTransactionId: Swift.String?, bundleId: Swift.String?, productId: Swift.String?, quantity: Swift.Double?)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase, b: MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewModerationRequest : Swift.Codable {
+  public struct NewModerationRequest : Swift.Codable, Swift.Hashable {
     public var resource: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequestResource
     public var type: Swift.String
     public var _description: Swift.String?
@@ -891,12 +1006,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequest, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewModerationRequest) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ModerationResponse : Swift.Codable {
+  public struct ModerationResponse : Swift.Codable, Swift.Hashable {
     public var _id: Foundation.UUID
     public init(_id: Foundation.UUID)
     public enum CodingKeys : Swift.String, Swift.CodingKey {
@@ -915,20 +1035,30 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ModerationResponse, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ModerationResponse) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ContestantModerationVerdict : Swift.Codable {
+  public struct ContestantModerationVerdict : Swift.Codable, Swift.Hashable {
     public var type: Swift.String
     public init(type: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationVerdict, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationVerdict) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ContestantModeration : Swift.Codable {
+  public struct ContestantModeration : Swift.Codable, Swift.Hashable {
     public enum Status : Swift.String, Swift.Codable {
       case rejected
       case approved
@@ -944,19 +1074,29 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var verdict: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationVerdict?
     public var action: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationAction?
     public init(type: Swift.String, status: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModeration.Status, verdict: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationVerdict?, action: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModerationAction?)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModeration, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ContestantModeration) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct LeaderboardEntry : Swift.Codable {
+  public struct LeaderboardEntry : Swift.Codable, Swift.Hashable {
     public var contestantId: Foundation.UUID
     public var position: Swift.Double
     public var positionChange: Swift.Double?
     public var createdAt: Foundation.Date
     public var updatedAt: Foundation.Date
     public init(contestantId: Foundation.UUID, position: Swift.Double, positionChange: Swift.Double?, createdAt: Foundation.Date, updatedAt: Foundation.Date)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.LeaderboardEntry, b: MIMIKEdgeClientCore.MIMIKEdgeClient.LeaderboardEntry) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
@@ -1073,7 +1213,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase {
   public func jsonString() -> Swift.String?
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct ContentType : Swift.Codable {
+  public struct ContentType : Swift.Codable, Swift.Hashable {
     public enum AccessType : Swift.String, Swift.Codable {
       case _public
       case _private
@@ -1105,12 +1245,17 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.ContentType, b: MIMIKEdgeClientCore.MIMIKEdgeClient.ContentType) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct Charity : Swift.Codable {
+  public struct Charity : Swift.Codable, Swift.Hashable {
     public var name: Swift.String
     public var _description: Swift.String
     public var logo: Swift.String
@@ -1143,18 +1288,28 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
         get
       }
     }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.Charity, b: MIMIKEdgeClientCore.MIMIKEdgeClient.Charity) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
-  public struct NewInAppPurchase : Swift.Codable {
+  public struct NewInAppPurchase : Swift.Codable, Swift.Hashable {
     public var contestantId: Swift.String
     public var anonymous: Swift.Bool?
     public var receipt: Swift.String
     public var device: Swift.String
     public init(contestantId: Swift.String, anonymous: Swift.Bool?, receipt: Swift.String, device: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
   }
 }
