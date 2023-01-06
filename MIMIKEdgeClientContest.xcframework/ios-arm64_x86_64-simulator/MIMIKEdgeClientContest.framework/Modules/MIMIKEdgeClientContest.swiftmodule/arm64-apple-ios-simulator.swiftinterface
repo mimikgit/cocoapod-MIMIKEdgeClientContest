@@ -448,7 +448,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   
   #if compiler(>=5.3) && $AsyncAwait
-  final public func createInAppPurchase(service: MIMIKEdgeClientCore.MIMIKService, purchase: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase) async -> Swift.Result<MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase, Foundation.NSError>
+  final public func createInAppPurchase(service: MIMIKEdgeClientCore.MIMIKService, purchase: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase, apiKey: Swift.String) async -> Swift.Result<MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase, Foundation.NSError>
   #endif
 
 }
@@ -966,11 +966,11 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
 extension MIMIKEdgeClientCore.MIMIKEdgeClient {
   public struct InAppPurchase : Swift.Codable, Swift.Hashable {
     public var transactionId: Swift.String?
-    public var originalTransactionId: Swift.String?
+    public var externalId: Swift.String?
     public var bundleId: Swift.String?
     public var productId: Swift.String?
     public var quantity: Swift.Double?
-    public init(transactionId: Swift.String?, originalTransactionId: Swift.String?, bundleId: Swift.String?, productId: Swift.String?, quantity: Swift.Double?)
+    public init(transactionId: Swift.String?, externalId: Swift.String?, bundleId: Swift.String?, productId: Swift.String?, quantity: Swift.Double?)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase, b: MIMIKEdgeClientCore.MIMIKEdgeClient.InAppPurchase) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
@@ -1302,8 +1302,7 @@ extension MIMIKEdgeClientCore.MIMIKEdgeClient {
     public var contestantId: Swift.String
     public var anonymous: Swift.Bool?
     public var receipt: Swift.String
-    public var device: Swift.String
-    public init(contestantId: Swift.String, anonymous: Swift.Bool?, receipt: Swift.String, device: Swift.String)
+    public init(contestantId: Swift.String, anonymous: Swift.Bool?, receipt: Swift.String)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase, b: MIMIKEdgeClientCore.MIMIKEdgeClient.NewInAppPurchase) -> Swift.Bool
     public func encode(to encoder: Swift.Encoder) throws
